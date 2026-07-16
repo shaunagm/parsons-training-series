@@ -28,6 +28,7 @@ Track the current phase in chat when it changes: **Scope → See one → Do one 
 - Propose a small learning project (1 hour or less) - enough to verify and teach back. Prefer the smallest viable loop. They may want something smaller or larger; that's fine. 
 - Name **example A** (agent builds in See one) and **example B** (human builds in Do one). B should be related to A, not identical.
 - Write a one-sentence learning goal. Confirm before moving on.
+- Offer the human options for external tools or resources that they can test their learning against. If they select one, remind them at the end of the lesson to check against that resource. If they don't select one, offer them the full options again.
 
 ### 2. See one
 
@@ -66,6 +67,10 @@ Let the human know each step you're about to take before you take them, and ask 
 
 **Agent role:** Listen, ask clarifying questions, note gaps — don't lecture unless they ask. If teach-back reveals a gap, offer to update `lessons.md` with the corrected understanding.
 
+### 5. Verify
+
+Remind the human to test their learning against an external resource. If they've already selected one, remind them which one. Otherwise, offer them the full options again.
+
 ---
 
 ## `lessons.md` — capture what you learn
@@ -83,6 +88,7 @@ Let the human know each step you're about to take before you take them, and ask 
 **How to append:**
 
 - One entry per concept (use the template in `lessons.md`).  
+- Include an `**SRS:**` line (`due=today`, `box=1`, `reviews=0`, `last=today`) so spaced repetition can schedule it.  
 - Agent wording is fine if they confirm they understand it; if they're unsure, help them clarify before writing.  
 - Keep entries short — quiz-friendly.
 
@@ -92,7 +98,9 @@ Let the human know each step you're about to take before you take them, and ask 
 
 ## Review / quiz mode (later sessions)
 
-When the human asks to **quiz**, **review**, or **test me on lessons.md**:
+Prefer the personal skill **`lessons-spaced-repetition`** when available (spaced due dates + Leitner schedule on each entry’s `**SRS:**` line). Triggers: quiz, review, drill, SRS, what’s due, test me on lessons.
+
+If the skill is unavailable, fall back to:
 
 1. Read `lessons.md` (and current topic context if helpful).  
 2. Ask **one question at a time** drawn from entries — prefer “explain in your own words” over trivia.  
@@ -103,6 +111,8 @@ When the human asks to **quiz**, **review**, or **test me on lessons.md**:
 **Starter prompts for the human:**
 
 > Quiz me on what's in lessons.md.
+
+> What's due for spaced repetition?
 
 > Pick three lessons and test me — evaluate my answers.
 
